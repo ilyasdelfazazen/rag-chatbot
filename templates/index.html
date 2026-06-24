@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot Interface</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <h1>Chatbot</h1>
+            <div class="model-selector">
+                <label for="model-select">Model:</label>
+                <select id="model-select">
+                    {% for model in models %}
+                    <option value="{{ model.id }}">{{ model.name }}</option>
+                    {% endfor %}
+                </select>
+                <label class="rag-toggle">
+                    <input type="checkbox" id="rag-toggle"> Use RAG
+                </label>
+            </div>
+        </header>
+
+        <div class="upload-area">
+            <input type="file" id="file-upload" accept=".pdf,.txt">
+            <button id="upload-btn">Upload Document</button>
+            <div id="upload-status"></div>
+        </div>
+
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="input-area">
+            <textarea id="user-input" placeholder="Ask your question..."></textarea>
+            <button id="send-btn">Send</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

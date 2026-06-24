@@ -1,0 +1,15 @@
+flask
+requests
+python-dotenv
+langchain
+langchain-community
+chromadb
+pypdf
+sentence-transformers
+python-dotenv
+tiktoken
+langchain-huggingface
+huggingface-hub[hf_xet]
+torch
+torchvision
+torchaudio
